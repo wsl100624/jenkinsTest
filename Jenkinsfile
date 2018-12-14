@@ -4,7 +4,7 @@ node('linux') {
     
     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '227bc396-0603-41fb-900c-98a3519fa21f', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
       sh 'aws cloudformation create-stack --stack-name final-test --template-body file://./docker-single-server.json --region us-east-1 --parameters ParameterKey=KeyName,ParameterValue=seis665 ParameterKey=YourIp,ParameterValue=140.209.14.79/32'
-	    sh 'aws cloudformation create-stack-complete --stack-name final-test'
+	    sh 'aws cloudformation stack-create-complete --stack-name final-test'
       sh 'aws cloudformation describe-stack-resources --region us-east-1 --stack-name final-test'
 		}    
   }
