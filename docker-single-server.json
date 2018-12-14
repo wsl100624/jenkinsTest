@@ -25,14 +25,14 @@
       }
     },
     "docker1": {
-      "UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
         "#!/bin/bash -xe\n",
         "sudo apt install redis-tools -y\n",
         
         "\n"
         ]]}},
-      "Type": "AWS::EC2::Instance",
-      "Properties": {
         "InstanceType": "t2.micro",
         "ImageId": "ami-f92ff686",
         "KeyName": {
