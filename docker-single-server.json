@@ -29,7 +29,11 @@
         "Fn::Base64" : {
           "Fn::Join" : [ "", [
             "#!/bin/bash -xe\n",
-            "sudo apt install redis-tools -y\n" ]
+            "sudo apt install redis-tools -y\n",
+            "aws configure set default.region us-east-1\n"
+            "aws configure set aws_access_key_id 'AKIAI63L5B7ARDYD5NUA'\n"
+            "aws configure set aws_secret_access_key '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'\n"
+          ]
           ]
         }
       },
